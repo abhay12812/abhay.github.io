@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Kiran Hospital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        nav {
+    background: #007bff; /* Blue Background */
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center the menu */
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0 15px; /* Space between menu items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav ul li:hover {
+    background: #0056b3;
+    border-radius: 5px;
+}
+
+/* Dropdown Menu Styling */
+nav ul li .dropdown {
+    display: none;
+    position: absolute;
+    background: #007bff;
+    min-width: 150px;
+    top: 100%;
+    left: 0;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+nav ul li .dropdown li {
+    display: block;
+}
+
+nav ul li .dropdown li a {
+    padding: 10px;
+    display: block;
+}
+
+/* Fix Login Button */
+nav ul li:last-child {
+    margin-left: auto;
+}
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #0b2c6e;
+        }
+
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+
+        .section {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 5px 0;
+        }
+
+        .stats {
+            font-size: 18px;
+            color: green;
+            font-weight: bold;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background: #0b2c6e;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>About Us</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="specialities.html">Specialities</a></li>
+                <li><a href="doctors.html">Doctor's Profiles</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="login-btn"><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+
+        <div class="section">
+            <h2>Vision & Mission</h2>
+            <h3>Vision</h3>
+            <p><strong>"Let All Be Healthy"</strong> - A Step Towards Healthy Community.</p>
+
+            <h3>Mission</h3>
+            <p>The Patients' Comfort & Care Comes First Above All To Provide Best Healthcare At Affordable Cost.</p>
+        </div>
+
+        <div class="section">
+            <h2>Quality Statement</h2>
+            <p>Kiran Hospital proudly declares our commitment to meet and exceed the requirements and expectations of the Community by providing coordinated, compassionate, and high-quality health care services at an affordable cost.</p>
+        </div>
+
+        <div class="section">
+            <h2>Hospital Values</h2>
+            <ul>
+                <li>• Respect for All</li>
+                <li>• Patient First</li>
+                <li>• Team Work</li>
+                <li>• Knowledge</li>
+                <li>• Integrity</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Comprehensive Range of Capabilities</h2>
+            <p>Delivering world-class health care.</p>
+        </div>
+
+        <div class="image-container">
+            <img src="hospital.jpg" alt="Kiran Hospital">
+        </div>
+
+        <div class="section">
+            <h2>Introduction</h2>
+            <p>SAMAST PATIDAR AAROGYA TRUST is a <span class="highlight">“NOT FOR PROFIT”</span> Organization. The Trust has setup a <strong>900 bedded</strong> state-of-the-art Multi Super Specialty Hospital and Research Centre in Surat, Gujarat. The hospital serves patients not only from Gujarat but across India and internationally.</p>
+        </div>
+
+        <div class="section">
+            <h2>Our Achievements</h2>
+            <p>On April 17, 2017, Kiran Hospital was inaugurated by the Prime Minister of India, <span class="highlight">Shri Narendra Modi</span>. Over 7 years, more than <span class="stats">27 Lac patients</span> have been treated.</p>
+            <p><span class="stats">400 crore</span> worth of advanced equipment has been used for diagnosis in <span class="stats">45 departments</span>, supported by <span class="stats">105 super-specialists</span> and <span class="stats">300 specialist doctors</span>.</p>
+        </div>
+
+        <div class="section">
+            <h2>Community Service</h2>
+            <p>Out of every 10 patients, <span class="highlight">4 free operations</span> are performed under the <span class="highlight">Ayushman Bharat Yojana</span>, helping lower-income families.</p>
+            <p>Last 7 years, Kiran Hospital has provided OPD benefits worth <span class="stats">504 crores</span>, and free treatments worth <span class="stats">588 crores</span> under Ayushman Bharat Yojana.</p>
+        </div>
+
+        <div class="section">
+            <h2>Affordable Healthcare</h2>
+            <p>Consultation charges are much lower than other hospitals:</p>
+            <ul>
+                <li>✅ Super-Specialty Doctor Fee: <span class="highlight">₹250</span> (Compared to ₹1500 in city hospitals)</li>
+                <li>✅ Specialist Doctor Fee: <span class="highlight">₹150</span> (Compared to ₹500 - ₹800 in city hospitals)</li>
+                <li>✅ Monthly OPD savings for patients: <span class="stats">₹6 crore</span></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Comparative Benefits</h2>
+            <p>Kiran Hospital provides over <span class="stats">8000 free treatments</span> per month under Ayushman Bharat Yojana.</p>
+            <p>Our pathology, radiology, and critical services (MRI, CT Scan, Dialysis, Chemo, etc.) are <span class="highlight">25-40%</span> cheaper than market rates.</p>
+        </div>
+
+        <div class="section">
+            <h2>Our Commitment</h2>
+            <p>Kiran Hospital has successfully fulfilled its main objective of providing quality healthcare at an international level. We will continue to serve the community with advanced medical treatments at the most affordable prices.</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Kiran Hospital. All rights reserved.</p>
+    </div>
+
+</body>
+</html>

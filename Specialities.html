@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Specialties Table</title>
+    <style>
+        body {
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+    background-color: #f4f7f6;
+}
+.hospital-header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hospital-info h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info {
+    margin-top: 10px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.language-selector select {
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+}
+
+.language-selector select:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.language-selector select option {
+    background-color: #764ba2;
+    color: white;
+}
+
+.signup-button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+    background-color: #ff4a3d;
+}
+nav {
+    background: #007bff; /* Blue Background */
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center the menu */
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0 15px; /* Space between menu items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav ul li:hover {
+    background: #0056b3;
+    border-radius: 5px;
+}
+
+/* Dropdown Menu Styling */
+nav ul li .dropdown {
+    display: none;
+    position: absolute;
+    background: #007bff;
+    min-width: 150px;
+    top: 100%;
+    left: 0;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+nav ul li .dropdown li {
+    display: block;
+}
+
+nav ul li .dropdown li a {
+    padding: 10px;
+    display: block;
+}
+
+/* Fix Login Button */
+nav ul li:last-child {
+    margin-left: auto;
+}
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 18px 25px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+td {
+    color: #555;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+td[rowspan] {
+    background-color: #f0f4f8;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1.1em;
+    border-right: 2px solid #d1d8e0;
+}
+
+/* Zebra striping for rows */
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:nth-child(even):hover {
+    background-color: #f1f3f5;
+}
+
+/* Rounded corners for the first and last rows */
+tr:first-child th:first-child {
+    border-top-left-radius: 12px;
+}
+
+tr:first-child th:last-child {
+    border-top-right-radius: 12px;
+}
+
+tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+/* Add a subtle animation to the table rows */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+tbody tr {
+    animation: fadeIn 0.5s ease-in-out;
+}
+   </style>
+</head>
+<body>
+    <header class="hospital-header">
+        <div class="hospital-info">
+            <h1>Divy Hospital</h1>
+            <div class="contact-info">
+                <p>Emergency Number: <a href="tel:+91-261-716111">+91-261-716111</a></p>
+                <p>Ambulance: <a href="tel:+91-261-7161122">+91-261-7161122</a></p>
+            </div>
+        </div>
+        <div class="header-actions">
+            <div class="language-selector">
+                <select id="language">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                    <option value="gu">ગુજરાતી</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                </select>
+            </div>
+            <a href="signup.html" class="signup-button">Signup</a>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="specialities.html">Specialities</a></li>
+            <li><a href="doctors.html">Doctor's Profiles</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="login-btn"><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <h1>Medical Specialties</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Sub-Specialties</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Accident & Emergency Medicine</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="7">Cardiac (Heart) Science</td>
+                <td>Interventional Cardiology</td>
+            </tr>
+            <tr>
+                <td>Pediatric Interventional Cardiology</td>
+            </tr>
+            <tr>
+                <td>Cardiac Surgery</td>
+            </tr>
+            <tr>
+                <td>Pediatric Cardiac Surgery</td>
+            </tr>
+            <tr>
+                <td>Non-Interventional Cardiology</td>
+            </tr>
+            <tr>
+                <td>Cardiac Anesthesia</td>
+            </tr>
+            <tr>
+                <td>Renal (Kidney) Science</td>
+            </tr>
+            <tr>
+                <td>Nephrology</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Urology</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="6">Oncology (Cancer) Science</td>
+                <td>Medical Oncology</td>
+            </tr>
+            <tr>
+                <td>Surgical Oncology</td>
+            </tr>
+            <tr>
+                <td>Radiation Oncology</td>
+            </tr>
+            <tr>
+                <td>Hemato-Oncology</td>
+            </tr>
+            <tr>
+                <td>Radioactive Therapy</td>
+            </tr>
+            <tr>
+                <td>Palliative Care</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Cosmetic and Reconstructive Science</td>
+                <td>Plastic & Reconstructive Surgery</td>
+            </tr>
+            <tr>
+                <td>Dermatology & Cosmetology</td>
+            </tr>
+            <tr>
+                <td>Surgery</td>
+                <td>General & Laparoscopic Surgery</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Neuroscience</td>
+                <td>Neurology</td>
+            </tr>
+            <tr>
+                <td>Brain & Spine Surgery</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Interventional Radiology</td>
+                <td>Neuro-Interventional Radiology</td>
+            </tr>
+            <tr>
+                <td>Peripheral Interventional Radiology</td>
+            </tr>
+            <tr>
+                <td rowspan="2">ENT</td>
+                <td>Ear, Nose & Throat</td>
+            </tr>
+            <tr>
+                <td>Audiologist and Speech Therapist</td>
+            </tr>
+            <tr>
+                <td>Pediatric Science</td>
+                <td>Pediatrics & Neonatology</td>
+            </tr>
+            <tr>
+                <td rowspan="6">Transplant</td>
+                <td>Kidney Transplant</td>
+            </tr>
+            <tr>
+                <td>Liver Transplant</td>
+            </tr>
+            <tr>
+                <td>Bone Marrow Transplant</td>
+            </tr>
+            <tr>
+                <td>Cornea Transplant</td>
+            </tr>
+            <tr>
+                <td>Heart and Lung Transplant</td>
+            </tr>
+            <tr>
+                <td>Hand Transplant</td>
+            </tr>
+            <tr>
+                <td>Laboratory Medicine</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Radio Diagnosis and Imaging</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Nuclear Imaging (PET)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Blood Centre</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
